@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   simple_deployment_pipeline:
@@ -20,3 +20,5 @@ jobs:
       - run: npm run eslint
       - run: npm run build
       - run: npm run test
+      - run: npx playwright install --with-deps
+      - run: npm run test:e2e

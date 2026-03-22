@@ -1,8 +1,4 @@
-// branch test comment
-// added deploy skip for PR
-// added tagging
-// test skip
-// test skip again
+// new pipeline test
 
 const path = require('path')
 const express = require('express')

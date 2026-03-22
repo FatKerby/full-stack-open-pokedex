@@ -49,7 +49,7 @@ jobs:
           content: "A new version deployed to production."
           title: "Deployment Successful!"
           color: 0x28a745 # Green
-          
+
   notify_failure:
     needs: [build_and_test, deploy]
     if: failure()
@@ -64,7 +64,8 @@ jobs:
           color: 0xd73a49
 
   tag_release:
-    needs: [notify_success]
+    needs: [deploy]
+    if: success()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
